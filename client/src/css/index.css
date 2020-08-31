@@ -1,0 +1,534 @@
+:root {
+  --bg:  #242526;
+  --bg-main: #e2edfa;
+  --bg-comm: #f1f5fa;
+  --text-color: #ffbd41;
+  --color-pri: #333;
+  --color-sec: #777;
+  --color-thi: #ddd;
+  --color-a: #245b8f;
+  --nav-size: 60px;
+  --border: 1px solid #474a4d;
+  --border-radius: 3px;
+}
+body {
+  background: var(--bg);
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 13px;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: var(--color-a);
+  text-decoration: none;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-main);
+}
+.main-content {
+  background-color: inherit;
+  width: 80%;
+  margin: 10px auto;
+  flex-grow: 1;
+}
+.main-content h2 {
+  padding: 0;
+  margin: 0;
+}
+footer {
+  width: 80%;
+  margin: 0 auto;
+  padding: 1em 0 1.5em;
+  color: var(--color-pri);
+  font-size: 12px;
+  text-align: center;
+}
+.navbar {
+  background-color: var(--bg);
+  padding: 0;
+  border-bottom: var(--border);
+}
+
+.navbar .right.menu .ui.dropdown {
+  display: flex;
+  align-items: center;
+  padding: .85714286em 1.14285714em;
+  max-height: 45px !important;
+  color: white;
+}
+.navbar .right.menu .ui.dropdown .menu {
+  top: 90%;
+  -webkit-box-shadow: 0 4px 4px rgba(0,0,0,.5);
+  box-shadow: 0 4px 4px rgba(0,0,0,.5);
+}
+.navbar .right.menu .ui.dropdown {
+  line-height: 15px;
+}
+.navbar .right.menu .ui.dropdown:hover {
+  color: var(--text-color) !important;
+}
+.navbar .right.menu .ui.dropdown .menu>.item:hover {
+  background: var(--bg-comm) !important;  
+}
+
+.ui.menu .item {
+  color: white;
+  box-sizing: border-box;
+  max-height: 38px !important;
+}
+.ui.menu .item>i.icon {
+  margin: 0;
+}
+.ui.menu .item>a {
+  vertical-align: middle;
+}
+.ui.menu.secondary {
+  width: 80%;
+  margin: 0 auto;
+}
+.ui.menu.secondary .active.item {
+  font-weight: normal;
+}
+.ui.menu.secondary a.header.item {
+  color: white !important;
+}
+.ui.menu.secondary a.header.item:hover,
+.ui.menu.secondary a.item:hover {
+  color: var(--text-color) !important;
+  background: rgba(0,0,0,.9) !important;
+}
+.ui.menu .right.menu .dropdown:last-chil .menu {
+  right: 30%;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.flex-container * {
+  box-sizing: border-box
+}
+.flex-container .help-container,
+.flex-container .login-container,
+.flex-container .signup-container {
+  width: 404px;
+  margin: 0 auto;
+}
+.formsection {
+  z-index: 1;
+  background-color: #FFFFFF;
+  margin: 48px auto 0 auto;
+  width: 404px;
+  text-align: center;
+  color: #888c90;
+  height: 515px;
+  overflow: hidden;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -khtml-user-select: text;
+  -ms-user-select: text;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+}
+.formsection h1 {
+  margin: 50px 0 25px 0;
+  color: #000;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  font-size: 3rem;
+}
+.formsection p {
+  margin: 10px 0;
+}
+.formsection .form-label {
+  font-size: 12px;
+  text-align: left;
+  padding: 0 40px;
+}
+.formsection .form-label:after {
+  content: ' *';
+  color: #CF081E;
+}
+.formsection input.form-input {
+  font-size: 16px;
+  background-color: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  border-radius: var(--border-radius);
+  width: 80%;
+  margin: 0 auto 8px auto;
+  padding: 0 12px;
+  height: 28px;
+  color: #4A5456;
+}
+input,
+input:focus,
+textarea {
+  outline: none;
+}
+.signup-options label {
+  font-size: 12px;
+}
+.signup-options input[type=radio]{
+  display: table-cell;
+  vertical-align: middle;
+  margin: 0 5px;
+}
+.login-separator {
+  position: relative;
+  width: calc(100% - 98px);
+  height: 1px;
+  margin: 22px auto;
+  border-top: 1px solid rgba(136, 140, 144, 0.6);
+}
+.separator-title {
+  display: inline-block;
+  position: absolute;
+  top: -8px;
+  left: 130px;
+  width: 48px;
+  height: 24px;
+  background-color: white;
+  font-size: 20px;
+}
+.help-container {
+  padding-top: 15px;
+}
+/* Set a style for the submit/register button */
+.btn {
+  background-color: #000;
+  color: white;
+  padding: 12px 10px;
+  margin: 8px 0;
+  border-radius: var(--border-radius);
+  border: none;
+  cursor: pointer;
+  width: 80%;
+  opacity: 0.9;
+}
+.btn.loginwith {
+  background-color: white;
+  border: 1px solid #000;
+  color: #000;
+}
+.btn:hover {
+  opacity: 1;
+}
+.help-container a {
+  color: #000;
+  font-size: 14px;
+  text-decoration: none;
+}
+.sidebar .ui.card .content {
+  padding: 7px;
+}
+.sidebar .ui.card .content.requests>.header {
+  font-size: 14px;
+}
+.sidebar .ui.card>.content>.header {
+  font-size: 12px;
+}
+.sidebar .buttons {
+  margin-top: 7px;
+}
+.sidebar .buttons>.button {
+  background-color: var(--bg-comm);
+  padding: 4px 6px;
+  font-size: 12px;
+  font-weight: normal;
+  color: var(--color-pri);
+  border-radius: var(--border-radius);
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.3);
+}
+.sidebar .buttons>.button:hover {
+  background-color: var(--text-color);
+  color: #000;
+}
+.sidebar .ui.card>.content>.description {
+  font-size: 12px;
+  color: var(--color-sec);
+}
+.new-post {
+  background-color: #FFF;
+  padding: 8px;
+  border: 1px solid var(--color-thi);
+  border-radius: var(--border-radius);
+}
+.new-post,
+.post {
+  margin: 0 10px 15px auto;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+}
+.post .description.no-content {
+  display: none;
+}
+.post-textarea {
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-bottom: 1px solid var(--color-thi);
+  resize: none;
+}
+.post-inputs {
+  text-align: right;
+  margin-top: 3px;
+}
+.picture .upload-avatar,
+.new-post .input-file {
+  width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.post-submit {
+  background-color: #242526;
+  color: #dadce1;
+  border: none;
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.3);
+}
+.new-post .input-file + label {
+  background-color: var(--bg-comm);
+  margin-right: 10px;
+  color: var(--color-pri);
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.3);
+}
+.post-submit,
+.new-post .input-file + label {
+  display: inline-block;
+  border-radius: var(--border-radius);
+  padding: 5px 12px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.post-submit:hover,
+.new-post .input-file:focus + label,
+.new-post .input-file + label:hover {
+  background-color: var(--text-color);
+  color: #000;
+}
+.new-post .input-file:focus + label {
+	outline: 1px dotted #000;
+	outline: -webkit-focus-ring-color auto 5px;
+}
+.ui.card {
+  position: relative;
+}
+.ui.card .meta {
+  font-size: 0.8em;
+}
+.ui.card>.dropdown {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+.ui.card>.content>a.header {
+  display: inline;
+  color: var(--color-a);
+}
+.m-14 {
+  margin-bottom: 14px;
+}
+.post .ui.dropdown .menu>.item:hover {
+  background: var(--bg-comm);
+}
+.post .ui.card>.content {
+  padding: 1em 1em 0.5em 1em;
+}
+.post .ui.buttons .button.action,
+.post .ui.buttons .button.action .label {
+  border-radius: 0;
+}
+.post .button.action {
+  background-color: transparent;
+}
+.post .button.action:hover,
+.post .button.action:focus,
+.post .button.action:active {
+  background-color: initial;
+}
+.post .button.action.toggle.active,
+.post .button.action.toggle.active:hover {
+  background-color: var(--bg-comm) !important;
+  color: var(--bg) !important;
+}
+.post .card>.contrast {
+  background-color: var(--bg-comm);
+}
+.post .card>.content.contrast {
+  padding: 7px;
+}
+.disabled {
+  pointer-events: none;
+}
+.comment-content,
+.post-content {
+  background-color: inherit;
+  width: 100%;
+  border: none;
+}
+.image.bg-avatar {
+  background-color: lightskyblue !important;
+}
+.image.floated.bg-avatar {
+  border-radius: .25rem;
+  margin-bottom: 0;
+  margin-right: 0.6rem;
+}
+.ui.button {
+  color: rgba(0, 0, 0, 0.3);
+  padding: .5em 1em;
+}
+.ui.button.comment-submit {
+  background: #fff;
+}
+.ui.form input[type=text],
+.ui.input>.input.comment-submit {
+  border: none;
+}
+.settings .ui.card,
+.users .ui.card {
+  width: 100%;
+  margin: 0 auto;
+}
+.users .ui.card>.content:nth-child(n+2)>.header {
+  display: inline;
+  font-size: 16px;
+}
+.users .ui.card>.content:nth-child(n+2) {
+  position: relative;
+}
+.users .image.floated.bg-avatar {
+  border-radius: 0;
+  margin-bottom: 0;
+  margin-right: 0.6em;
+}
+.users .buttons>.button {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background-color: var(--text-color);
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: normal;
+  color: var(--color-pri);
+  border-radius: var(--border-radius);
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.3);
+}
+.users .buttons>.button:hover {
+  background-color: #000;
+  color: var(--text-color);
+}
+.profile {
+  position: relative;
+}
+.profile .picture {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+}
+.profile .picture .icon:before {
+  line-height: calc(var(--nav-size)/2);
+  height: calc(var(--nav-size)/2);
+}
+.profile .picture .icon {
+  height: calc(var(--nav-size)/2);
+  width: calc(var(--nav-size)/2);
+  color: var(--text-color);
+  background: var(--color-pri);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.profile .picture .icon.invisible,
+.profile .picture .icon.invisible:before {
+  display: none;
+  height: 0px;
+  width: 0px;
+}
+.ui.comments,
+.ui.comments .comment {
+  margin: 0;
+}
+.ui.comments .comment {
+  padding: .2em 0 0;
+}
+.ui.comments .comment:not(:last-child) {
+  border-bottom: 1px solid var(--bg-main);
+}
+.ui.comments .comment .avatar {
+  margin: 0;
+  width: 2.35em;
+}
+.ui.comments .comment>.avatar~.content {
+  margin-left: 2.8em;
+}
+.ui.comments .comment .author {
+  color: var(--color-a);
+  font-weight: 500;
+}
+.ui.comments .comment .metadata {
+  font-size: .8em;
+}
+.ui.comments .comment .metadata .button {
+  background: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1em;
+  color: var(--color-a);
+  font-weight: normal;
+}
+.ui.comments .comment .metadata .button:first-child {
+  margin-left: 5px;
+}
+.ui.comments .comment .text {
+  margin: 0 0 0.4em;
+  font-size: .9em;
+}
+.settings .profile select,
+.settings .profile input {
+  font-size: 16px;
+  background-color: #FFFFFF;
+  border: 1px solid #CCCCCC;
+  border-radius: var(--border-radius);
+  line-height: 24px;
+  padding: 4px 10px;
+  color: #4A5456; 
+}
+.settings .profile .page-title {
+  font-size: 48px;
+  font-weight: 900;
+  padding: 0 0 .5em;
+  margin: 0;
+}
+.settings .profile .form-label {
+  font-size: 14px;
+  font-weight: 700;
+  padding: 0 0 .5em;
+}
+.settings .profile .form-input {
+  width: 100%;
+  margin: 0 0 14px;
+}
+.settings .profile .save {
+  background-color: var(--text-color);
+  float: right;
+  padding: 12px 10px;
+  margin: 8px 0;
+  border-radius: var(--border-radius);
+  border: none;
+  cursor: pointer;
+  width: 25%;
+  color: var(--color-pri);
+}
+.settings .profile .save:hover {
+  background-color: #000;
+  color: var(--text-color); 
+}
