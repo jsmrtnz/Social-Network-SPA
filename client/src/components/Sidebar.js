@@ -12,7 +12,7 @@ function SideBar(props) {
   }
   const handleAddFriend = async (id, index) => {
     try {
-      const response = await axios.post(`/fr?id=${id}`);
+      const response = await axios.post(`/api/fr?id=${id}`);
       refsArray[index].ref.current.textContent = response.status === 201 ? "Friend request sent" : "Add friend";
     } catch (e) {
       console.log(e);

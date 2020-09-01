@@ -7,7 +7,7 @@ function Login(props) {
   const history = useHistory();
   const loginUser = async () => {
     try {
-      const response = await axios.post('/login', inputs);
+      const response = await axios.post('/api/login', inputs);
       props.onSubmit(response.data);
       history.push('/');
     } catch(e) {

@@ -13,7 +13,7 @@ function ProfileCard(props) {
     try {
       const data = new FormData();
       data.append('avatar', inputs.avatar);
-      const response = await axios.post('/avatar', data);
+      const response = await axios.post('/api/avatar', data);
       props.onUpdateProfile(response.data);
       props.onUpdateUser(response.data);
       clearInputs();

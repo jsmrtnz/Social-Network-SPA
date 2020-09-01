@@ -45,9 +45,9 @@ class PostListData extends React.Component {
   fetchTimeline = async () => {
     try {
       let data = [];
-      const response = await axios.get('/timeline');
+      const response = await axios.get('/api/timeline');
       for (const post of response.data) {
-        let user = await axios.get(`/user/meta?id=${post.owner}`)
+        let user = await axios.get(`/api/user/meta?id=${post.owner}`)
         data.push({...post, ...{owner: user.data}})
       }
       this.handleFetch(data);
@@ -58,9 +58,9 @@ class PostListData extends React.Component {
   fetchPosts = async () => {
     try {
       let data = [];
-      const response = await axios.get(`/posts?id=${this.props.match.params.id}`);
+      const response = await axios.get(`/api/posts?id=${this.props.match.params.id}`);
       for (const post of response.data) {
-        let user = await axios.get(`/user/meta?id=${post.owner}`)
+        let user = await axios.get(`/api/user/meta?id=${post.owner}`)
         data.push({...post, ...{owner: user.data}})
       }
       this.handleFetch(data);

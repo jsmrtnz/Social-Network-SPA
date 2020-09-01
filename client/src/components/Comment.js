@@ -12,7 +12,7 @@ function MyComment(props) {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`/comments?id=${comment._id}`);
+      await axios.delete(`/api/comments?id=${comment._id}`);
       props.onDelete(comment._id)
     } catch(e) {
       console.log(e);
@@ -20,7 +20,7 @@ function MyComment(props) {
   }
   const handleUpdate = async () => {
     try {
-      const {data: { _id, content }} = await axios.patch('/comments', { _id: comment._id, ...inputs });
+      const {data: { _id, content }} = await axios.patch('/api/comments', { _id: comment._id, ...inputs });
       props.onUpdate(_id, content);
     } catch(e) {
       console.log(e);

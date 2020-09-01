@@ -57,7 +57,7 @@ class App extends React.Component {
   }
   handleLogOut = async () => {
     try {
-      await axios.post('/logout');
+      await axios.post('/api/logout');
       this.handleResetState();
     } catch(e) {
       console.log(e);
@@ -66,7 +66,7 @@ class App extends React.Component {
   componentDidMount = () => {
     (async () => {
       try {
-        const response = await axios.get('/validate_cookie');
+        const response = await axios.get('/api/validate_cookie');
         this.handleLogIn(response.data);
       } catch(e) {
         console.log(e);

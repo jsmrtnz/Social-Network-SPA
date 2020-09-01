@@ -12,7 +12,7 @@ function NewPost(props) {
       const data = new FormData();
       data.append('content', inputs.content);
       data.append('post', inputs.post);
-      const response = await axios.post('/posts', data);
+      const response = await axios.post('/api/posts', data);
       // , { headers: {
       //   'Authorization': 'Bearer ' + props.token
       // }}

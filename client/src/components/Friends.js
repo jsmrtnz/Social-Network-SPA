@@ -9,7 +9,7 @@ function Friends(props) {
   const { user } = props;
   const fetchFriends = async () => {
     try {
-      const response = await axios.get(`/friends?id=${user._id}`);
+      const response = await axios.get(`/api/friends?id=${user._id}`);
       setFriends(response.data);
     } catch (e) {
       console.log(e);
@@ -17,7 +17,7 @@ function Friends(props) {
   }
   const handleDeleteFriend = async (id, index) => {
     try {
-      await axios.delete(`/friend?id=${id}`);
+      await axios.delete(`/api/friend?id=${id}`);
       setFriends(friends.filter(friend => friend._id !== id));
     } catch (e) {
       console.log(e);

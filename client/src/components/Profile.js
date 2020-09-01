@@ -19,7 +19,7 @@ class Profile extends React.Component {
   }
   fetchProfile = async () => {
     try {
-      const { data } = await axios.get(`/user?id=${this.props.match.params.id}`);
+      const { data } = await axios.get(`/api/user?id=${this.props.match.params.id}`);
       this.setState({ profile: data });
     } catch (e) {
       console.log(e);

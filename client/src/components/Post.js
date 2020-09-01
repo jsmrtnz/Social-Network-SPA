@@ -34,7 +34,7 @@ function Post(props) {
   }
   const handleLike = async () => {
     try {
-      const {data: {_id, owner}} = await axios.post('/posts/like', { _id: post._id } );
+      const {data: {_id, owner}} = await axios.post('/api/posts/like', { _id: post._id } );
       props.onLike(_id, owner);
     } catch(e) {
       console.log(e);
@@ -42,7 +42,7 @@ function Post(props) {
   }
   const handleDeletePost = async () => {
     try {
-      const {data: {_id}} = await axios.delete(`/posts?id=${post._id}`);
+      const {data: {_id}} = await axios.delete(`/api/posts?id=${post._id}`);
       props.onDelete(_id)
     } catch(e) {
       console.log(e);
@@ -50,7 +50,7 @@ function Post(props) {
   }
   const handleUpdatePost = async () => {
     try {
-      const {data: { _id, content }} = await axios.patch(`/posts?id=${post._id}`, inputs);
+      const {data: { _id, content }} = await axios.patch(`/api/posts?id=${post._id}`, inputs);
       props.onUpdate( _id, content);
     } catch(e) {
       console.log(e);

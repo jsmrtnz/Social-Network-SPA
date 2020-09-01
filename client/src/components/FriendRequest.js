@@ -6,7 +6,7 @@ import { _arrayBufferToUrl } from '../utils/helpers';
 function FriendRequest(props) {
   const handleResponse = async (res) => {
     try {
-      await axios.delete(`/fr?id=${props._id}&v=${res}`);
+      await axios.delete(`/api/fr?id=${props._id}&v=${res}`);
       props.onResponse(props._id);
     } catch (e) {
       console.log(e);

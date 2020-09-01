@@ -8,7 +8,7 @@ function FindFriends(props) {
   const refsArray = [];
   const fetchUsers = async () => {
     try {
-      const response = await axios.get('/users');
+      const response = await axios.get('/api/users');
       setUsers(response.data);
     } catch (e) {
       console.log(e);
@@ -16,7 +16,7 @@ function FindFriends(props) {
   }
   const handleAddFriend = async (id, index) => {
     try {
-      const response = await axios.post(`/fr?id=${id}`);
+      const response = await axios.post(`/api/fr?id=${id}`);
       refsArray[index].ref.current.textContent = response.status === 201 ? "Friend request sent" : "Add friend";
     } catch (e) {
       console.log(e);

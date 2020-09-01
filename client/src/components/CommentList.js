@@ -12,9 +12,9 @@ function CommentList(props) {
   const fetchComments = async () => {
     try {
       let data = [];
-      const response = await axios.get(`/comments?id=${post._id}`);
+      const response = await axios.get(`/api/comments?id=${post._id}`);
       for (const comment of response.data) {
-        let author = await axios.get(`/user/meta?id=${comment.author}`);
+        let author = await axios.get(`/api/user/meta?id=${comment.author}`);
         data.push({...comment, ...{author: author.data}});
       }
       setComments(data);
@@ -24,8 +24,8 @@ function CommentList(props) {
   }
   const handleCreate = async () => {
     try {
-      const { data: comment } = await axios.post('/comments', { _id: post._id, ...inputs });
-      const { data: author } = await axios.get(`/user/meta?id=${comment.author}`);
+      const { data: comment } = await axios.post('/api/comments', { _id: post._id, ...inputs });
+      const { data: author } = await axios.get(`/api/api/user/meta?id=${comment.author}`);
       const newComments = comments.concat({ ...comment, ...{ author }});
       setComments(newComments);
       clearInputs();

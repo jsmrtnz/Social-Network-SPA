@@ -12,7 +12,7 @@ function Settings(props) {
   }, [user]);
   const updateProfile = async () => {
     try {
-      const response = await axios.patch('/profile', inputs);
+      const response = await axios.patch('/api/profile', inputs);
       props.onSubmit(response.data);
       setMessage({ visible: true, status: 'success', text: 'Your profile was saved successfully!' });
     } catch(e) {

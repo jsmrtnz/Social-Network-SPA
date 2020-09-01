@@ -6,7 +6,7 @@ import { Grid } from 'semantic-ui-react';
 class Home extends React.Component {
   fetchUsers = async () => {
     try {
-      const response = await axios.get('/users?limit=5&skip=0');
+      const response = await axios.get('/api/users?limit=5&skip=0');
       this.props.onUpdateUsers(response.data);
     } catch (e) {
       console.log(e);
@@ -15,9 +15,9 @@ class Home extends React.Component {
   fetchFriendRequests = async () => {
     try {
       let requestsArray = [];
-      const response = await axios.get('/fr');
+      const response = await axios.get('/api/fr');
       for (const request of response.data) {
-        let user = await axios.get(`/user/meta?id=${request.from}`)
+        let user = await axios.get(`/api/user/meta?id=${request.from}`)
         requestsArray.push({_id: request._id, user: user.data});
       };
       this.props.onUpdateRequests(requestsArray);

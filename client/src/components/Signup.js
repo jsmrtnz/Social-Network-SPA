@@ -7,7 +7,7 @@ function Signup(props) {
   const history = useHistory();
   const registerUser = async () => {
     try {
-      const response = await axios.post('/signup', inputs);
+      const response = await axios.post('/api/signup', inputs);
       props.onSubmit(response.data);
       history.push('/');
     } catch(e) {
