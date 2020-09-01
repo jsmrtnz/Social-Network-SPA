@@ -43,12 +43,13 @@ a {
   margin: 0;
 }
 footer {
-  width: 80%;
+  /* width: 80%;
   margin: 0 auto;
-  padding: 1em 0 1.5em;
+  padding: 1em 0 1.5em; */
   color: var(--color-pri);
   font-size: 12px;
-  text-align: center;
+  /* text-align: center; */
+  float: left;
 }
 .navbar {
   background-color: var(--bg);
@@ -140,7 +141,7 @@ footer {
   border-radius: 4px;
 }
 .formsection h1 {
-  margin: 50px 0 25px 0;
+  margin: 35px 0 25px 0;
   color: #000;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   font-size: 3rem;
@@ -517,17 +518,26 @@ textarea {
   width: 100%;
   margin: 0 0 14px;
 }
+.settings .profile .delete,
 .settings .profile .save {
-  background-color: var(--text-color);
-  float: right;
   padding: 12px 10px;
   margin: 8px 0;
   border-radius: var(--border-radius);
   border: none;
   cursor: pointer;
   width: 25%;
+}
+.settings .profile .delete {
+  background-color: #d33131;
+  float: left;
+  color: white;
+}
+.settings .profile .save {
+  background-color: var(--text-color);
+  float: right;
   color: var(--color-pri);
 }
+.settings .profile .delete:hover,
 .settings .profile .save:hover {
   background-color: #000;
   color: var(--text-color); 

@@ -25,7 +25,7 @@ function CommentList(props) {
   const handleCreate = async () => {
     try {
       const { data: comment } = await axios.post('/api/comments', { _id: post._id, ...inputs });
-      const { data: author } = await axios.get(`/api/api/user/meta?id=${comment.author}`);
+      const { data: author } = await axios.get(`/api/user/meta?id=${comment.author}`);
       const newComments = comments.concat({ ...comment, ...{ author }});
       setComments(newComments);
       clearInputs();

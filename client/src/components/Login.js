@@ -30,8 +30,8 @@ function Login(props) {
           <div className="login-separator">
             <span className="separator-title">OR</span>
           </div>
-          <button type="submit" className="btn loginwith">Login with Facebook</button>
-          <button type="submit" className="btn loginwith">Login with Github</button>
+          <button type="submit" className="btn loginwith disabled">Login with Facebook</button>
+          <button type="submit" className="btn loginwith disabled">Login with Github</button>
         </form>
       </div>
       <div className="help-container">

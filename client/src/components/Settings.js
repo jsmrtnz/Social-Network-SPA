@@ -10,6 +10,14 @@ function Settings(props) {
   useEffect(() => {
     setData(user);
   }, [user]);
+  const deleteProfile = async () => {
+    try {
+      await axios.delete('/api/profile');
+      props.onDelete();
+    } catch(e) {
+      console.log(e);
+    }
+  }
   const updateProfile = async () => {
     try {
       const response = await axios.patch('/api/profile', inputs);
@@ -61,6 +69,7 @@ function Settings(props) {
                 <option value='female'>Female</option>
                 <option value='other'>Other</option>
               </select>
+              <button className="delete" onClick={deleteProfile}>Delete Profile</button>
               <button type="submit" className="save">Save Profile</button>
             </form>
           </Card.Content>
